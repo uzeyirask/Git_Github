@@ -1,0 +1,48 @@
+git : versiyon kontrol sistemi
+pwd ; bulundugun dosya YOLUNU gosterir
+ls; bulundugu dizindeki dosyalari gosterir
+cd dosya1 ; cd den sonra yazilan dosya1in icine girer yeni dizin dosya1 dir dikkat!! cd den sonra yazilan dosya adinin o bulunan dizinde var olmasi gerekmektedir
+cd .. ; bir onceki dosya dizinine girer. geri gider yani
+mkdir deneme1 ; bu komut bulunan dizine deneme1 diye bir KLASOR olusturur
+touch not1.txt ; bulunan klasor icine not1 adinda bir tct dosyasi olusturur
+rm not1.txt ; not1 adindandaki txt dosyasini siler
+rm -rf Gitkursu ; bu komut git kursu KLASORUNU siler
+git config --global user.name "King_Uzeyir" ; King_Uzeyir adinda bir kullanici adi tanimlar 
+git config --global user.email uzeyirask@hotmail.com  ; bu kodda email tanimlamasi yapar
+ls -la ; gizli klasorleride gosterir
+
+git status ; guncel git durumunu gosterir !!git init yapmadan once kontrol et
+git init; git durumuna sokar git repository e dosya kaydetme moduna sokar yazmadan once statusla kontrol et
+rm -rf .git ; bunu yalnis klasoru initlediysen geri almak icin kullanmalisin
+git add ornek1.txt ; ornek1.txtyi gite yukler ve bu git status yazilarak gorulebilir
+git add . ; dosyalarda yaptigin tum degisikleri kaydeder alir
+git commit -m "ilk ornek olusturuldu" ; seklinde yazilir ve projenin o asamasina cift tirnak icerisineki yaziyi yazar commit atar yani yapilan degisiklikleri vs. yi bir yorum olarak ekler bir nebi
+git log ; projede hangi dosyada ne zaman ne degisiklik yaptigini ne zaman yazdigini ve commitleyerek yazdigin yaziyi sirasiyla gosterir
+touch gitignore ; bu komut sayesinde dizine .gitignore diye bir dosya benzeri bir sey olusur ondan sonra oranin icine gizleyecen dosyanin ismini ve uzantisini yazarsin kaydersin olur aralardaki commit islemini unutma .gitignore olusturdun diye bi commit yazip bildir
+
+git branch ; mevcut brancleri gosterir hangi branctesin onuda gosterir
+git branch feature ; feature adinda bir branch acar
+git switch feature ; mevcut branchten feature branchine gecer.
+git merge feature ; mastere yada o an hangi brancteysen o branche feature dahil edildi. 
+Fast-forward islemi soyle olur diyelimki masterde calisirken baska bir branch xyz diye bir branch actin ve orda islemler yaptin ve o islemleri yapana kadar mastere daha donmedin islemler bitti merge edersen fast-forward yapmis olursun cunku xyzde islem yaparken switch yapip masterde islem yapmadin bir nevi oraya ekledin direk  mastere bu yuzden commit yazisina bile gerek olmuyor
+git confict de yapilmasi gereken sey merge yapildiktan sonra cakisma var demektir confict diyorsa bu sebebten oturu sorunu cozmek icin karar verip ona gore cozmen gerekiyor
+
+git restore xyz.txt : abska bir birancta degisklik yapip orda comit etmeden master brancine dondun ve hata mesaji aldin bu komut geriye alir bir nevi degisikleri 
+git stash : bir branchta degisklik yaptigimda acilen baska bir branche gecerken add, commit yapmadan switch yaparsan verilerin kaybolmamasi icin kullanman gereken ozellik
+git stash pop : git stash yaptiktan sonra giden sorunlari yeniden gunyuzune cikarir
+git stash list : git stash ile saklanan geri dome noktalarini gosterir
+git stash apply stash{cartcurt_stashi} : belirttigin stashi alir onu uygular
+git stash clear : butun stash listeleri silinir
+
+tanim = Detached HEAD :masterle head ayni yerde degil birbirinden kopuk halde demek git log calistirdiginda head der ama master demez git branch yazdigindada kopuk halde oldugunu gorebilirsin
+git checkout commitIdsiniburayayaz : bu seni o andaki commit haline goturu git switch master yaparsan geri gelirsin hicbir sey olmamis gibi bir nevi orda ne olmustu bakip geri geldin hemen kalici bir degisiklik yapmazsin. Istersen checkoutttan sonra orda ayri branch acip o branchtende devam edebilirsin sonra mastere donebilirsin 
+git reset commitIdsiniburayayaz :bu komut sayesinde verilen commit id sonrasinda yapilan degisiklerikleri siler logda gozukmez ama text editorunde gozukur kaydedilmemis sekilde
+git reset --hard 97a5d99c37bcb2d9a329d1018f6c58a8baec06fe :kullanilan commit numarasina kadar girelen commitleri siler duz resetten farki direk siler editorde yapilan degisiklikleri goremezsen daha temiz olur bence
+git revert commitidsi : bunu yazarken hemen en son kaydedilen committen yaz sorun cikmasin yazdiktan sonra bir commit mesaji isteyecek sonrasinda degisklikleri bir oncesine alacak editorden bilgi gider ama logda degistirildigine dair bilgi tutulur bu ayni branchte kalmani geri donmek isterken bir yandanda bilgiyi silmemeni saglar
+git diff : birden fazla kullanim sekli var ornek 1: git diff master feat burda iki ayri branch arasindaki farklari gostermektedeir ayni zamanda bunu iki ayri commit arasindada yapabilirsin git diff bircommitHashi baskabircommitHashi kullanimda araya bosluk koyulabilir ama kabuul etmezse araya iki nokta koyarak dene
+git rebase master : feattayken bunu yaparsan once masterden baslyarak featinda commitlerini siralar mergeleri ortadan kaldirir git log duzenli gozukur bu sayede
+
+
+GITHUB
+git remote add origin httpsfelanburayareponunlinkini : git bashta bu kodu calistir ilk once bu kod blogu origin adina yazdigin linkini atiyoruz
+git push -u origin master :bu kod verdigin linke masterde 
