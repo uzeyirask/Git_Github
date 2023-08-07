@@ -24,13 +24,13 @@ git branch ; mevcut brancleri gosterir hangi branctesin onuda gosterir
 git branch feature ; feature adinda bir branch acar
 git switch feature ; mevcut branchten feature branchine gecer.
 git merge feature ; mastere yada o an hangi brancteysen o branche feature dahil edildi. 
-Fast-forward islemi soyle olur diyelimki masterde calisirken baska bir branch xyz diye bir branch actin ve orda islemler yaptin ve o islemleri yapana kadar mastere daha donmedin islemler bitti merge edersen fast-forward yapmis olursun cunku xyzde islem yaparken switch yapip masterde islem yapmadin bir nevi oraya ekledin direk  mastere bu yuzden commit yazisina bile gerek olmuyor
+Fast-forward islemi soyle olur diyelimki masterde calisirken baska bir branch xyz diye bir branch actin ve orda islemler yaptin ve o islemleri yapana kadar mastere daha donmedin islemler bitti merge edersen fast-forward yapmis olursun cunku xyzde islem yaparken switch yapip masterde islem yapmadin bir nevi oraya ekledin direk mastere bu yuzden commit yazisina bile gerek olmuyor
 git confict de yapilmasi gereken sey merge yapildiktan sonra cakisma var demektir confict diyorsa bu sebebten oturu sorunu cozmek icin karar verip ona gore cozmen gerekiyor
 
-git restore xyz.txt : baska bir birancta degisklik yapip orda comit etmeden master brancine dondun ve hata mesaji aldin bu komut geriye alir bir nevi degisikleri 
+git restore xyz.txt : baska bir brancta degisiklik yapip orda comit etmeden master brancine dondun ve hata mesaji aldin bu komut geriye alir bir nevi degisikleri 
 git stash : bir branchta degisiklik yaptigimda acilen baska bir branche gecerken add, commit yapmadan switch yaparsan verilerin kaybolmamasi icin kullanman gereken ozellik
 git stash pop : git stash yaptiktan sonra giden sorunlari yeniden gunyuzune cikarir
-git stash list : git stash ile saklanan geri dome noktalarini gosterir
+git stash list : git stash ile saklanan geri donme noktalarini gosterir
 git stash apply stash{cartcurt_stashi} : belirttigin stashi alir onu uygular
 git stash clear : butun stash listeleri silinir
 
@@ -40,12 +40,15 @@ git reset commitIdsiniburayayaz :bu komut sayesinde verilen commit id sonrasinda
 git reset --hard 97a5d99c37bcb2d9a329d1018f6c58a8baec06fe :kullanilan commit numarasina kadar girelen commitleri siler duz resetten farki direk siler editorde yapilan degisiklikleri goremezsen daha temiz olur bence
 git revert commitidsi : bunu yazarken hemen en son kaydedilen committen yaz sorun cikmasin yazdiktan sonra bir commit mesaji isteyecek sonrasinda degisklikleri bir oncesine alacak editorden bilgi gider ama logda degistirildigine dair bilgi tutulur bu ayni branchte kalmani geri donmek isterken bir yandanda bilgiyi silmemeni saglar
 git diff : birden fazla kullanim sekli var ornek 1: git diff master feat burda iki ayri branch arasindaki farklari gostermektedeir ayni zamanda bunu iki ayri commit arasindada yapabilirsin git diff bircommitHashi baskabircommitHashi kullanimda araya bosluk koyulabilir ama kabuul etmezse araya iki nokta koyarak dene
-git rebase master : feattayken bunu yaparsan once masterden baslyarak featinda commitlerini siralar mergeleri ortadan kaldirir git log duzenli gozukur bu sayede
+git rebase master : feattayken bunu yaparsan once masterden baslayarak featinda commitlerini siralar mergeleri ortadan kaldirir git log duzenli gozukur bu sayede
 
 
 GITHUB
 git remote add origin httpsFelanBurayaReponunLinkini : git bashta bu kodu calistir ilk once bu kod blogu origin adina yazdigin linkini atiyoruz
-git push -u origin master :bu kod verdigin linke masterdeç
+git push -u origin master :komutu, yereldeki "master" dalını uzak "origin" deposundaki "master" dalına gönderir ve aynı zamanda bu dallar arasında ilişki kurar, böylece gelecekteki işlemler için varsayılan ayarlar belirlenir.
 
 git config --global user.name "Uzeyir ASKIN" : Bu kod yazan kisi adina Uzeyir ASKIN olarak bilgilendirir.
 git config --Global user.email "uzeyirask@hotmail.com" : Bu kod yazan kisinin emailini uzeyirask olarak bilgilendirir.
+
+git branch -r :kaldirilmis brancleri gosterir
+git fetch 
