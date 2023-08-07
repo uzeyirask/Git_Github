@@ -16,7 +16,7 @@ git init; git durumuna sokar git repository e dosya kaydetme moduna sokar yazmad
 rm -rf .git ; bunu yalnis klasoru initlediysen geri almak icin kullanmalisin
 git add ornek1.txt ; ornek1.txtyi gite yukler ve bu git status yazilarak gorulebilir
 git add . ; dosyalarda yaptigin tum degisikleri kaydeder alir
-git commit -m "ilk ornek olusturuldu" ; seklinde yazilir ve projenin o asamasina cift tirnak icerisineki yaziyi yazar commit atar yani yapilan degisiklikleri vs. yi bir yorum olarak ekler bir nebi
+git commit -m "ilk ornek olusturuldu" ; seklinde yazilir ve projenin o asamasina cift tirnak icerisineki yaziyi yazar commit atar yani yapilan degisiklikleri vs. yi bir yorum olarak ekler bir nevi
 git log ; projede hangi dosyada ne zaman ne degisiklik yaptigini ne zaman yazdigini ve commitleyerek yazdigin yaziyi sirasiyla gosterir
 touch gitignore ; bu komut sayesinde dizine .gitignore diye bir dosya benzeri bir sey olusur ondan sonra oranin icine gizleyecen dosyanin ismini ve uzantisini yazarsin kaydersin olur aralardaki commit islemini unutma .gitignore olusturdun diye bi commit yazip bildir
 
@@ -27,8 +27,8 @@ git merge feature ; mastere yada o an hangi brancteysen o branche feature dahil 
 Fast-forward islemi soyle olur diyelimki masterde calisirken baska bir branch xyz diye bir branch actin ve orda islemler yaptin ve o islemleri yapana kadar mastere daha donmedin islemler bitti merge edersen fast-forward yapmis olursun cunku xyzde islem yaparken switch yapip masterde islem yapmadin bir nevi oraya ekledin direk  mastere bu yuzden commit yazisina bile gerek olmuyor
 git confict de yapilmasi gereken sey merge yapildiktan sonra cakisma var demektir confict diyorsa bu sebebten oturu sorunu cozmek icin karar verip ona gore cozmen gerekiyor
 
-git restore xyz.txt : abska bir birancta degisklik yapip orda comit etmeden master brancine dondun ve hata mesaji aldin bu komut geriye alir bir nevi degisikleri 
-git stash : bir branchta degisklik yaptigimda acilen baska bir branche gecerken add, commit yapmadan switch yaparsan verilerin kaybolmamasi icin kullanman gereken ozellik
+git restore xyz.txt : baska bir birancta degisklik yapip orda comit etmeden master brancine dondun ve hata mesaji aldin bu komut geriye alir bir nevi degisikleri 
+git stash : bir branchta degisiklik yaptigimda acilen baska bir branche gecerken add, commit yapmadan switch yaparsan verilerin kaybolmamasi icin kullanman gereken ozellik
 git stash pop : git stash yaptiktan sonra giden sorunlari yeniden gunyuzune cikarir
 git stash list : git stash ile saklanan geri dome noktalarini gosterir
 git stash apply stash{cartcurt_stashi} : belirttigin stashi alir onu uygular
@@ -44,5 +44,8 @@ git rebase master : feattayken bunu yaparsan once masterden baslyarak featinda c
 
 
 GITHUB
-git remote add origin httpsfelanburayareponunlinkini : git bashta bu kodu calistir ilk once bu kod blogu origin adina yazdigin linkini atiyoruz
-git push -u origin master :bu kod verdigin linke masterde 
+git remote add origin httpsFelanBurayaReponunLinkini : git bashta bu kodu calistir ilk once bu kod blogu origin adina yazdigin linkini atiyoruz
+git push -u origin master :bu kod verdigin linke masterdeç
+
+git config --global user.name "Uzeyir ASKIN" : Bu kod yazan kisi adina Uzeyir ASKIN olarak bilgilendirir.
+git config --Global user.email "uzeyirask@hotmail.com" : Bu kod yazan kisinin emailini uzeyirask olarak bilgilendirir.
